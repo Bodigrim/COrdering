@@ -1,46 +1,34 @@
-Name:               COrdering
-Version:            2.3
-x-revision: 1
-Cabal-Version:      >= 1.2
-Build-Type:         Simple
-License:            BSD3
-License-File:       LICENSE
-Copyright:          (c) Adrian Hey 2004-2008
-Author:             Adrian Hey
-Maintainer:	    Adrian Hey http://homepages.nildram.co.uk/~ahey/em.png
-Stability:          Stable
-Homepage:
-Package-Url:
-Synopsis:           An algebraic data type similar to Prelude Ordering.
-Description:        Typically this is used as the return type of a combining comparison, which combines two
-                    values if they are deemed equal in some sense. Currently combining comparisons are used
-                    extensively by the AVL tree package (AvlTree).
-Category:           Data
-Tested-With:        GHC == 6.8.3, GHC == 6.8.2, GHC == 6.8.1
-Data-Files:
-Extra-Source-Files: AUTHORS, CHANGELOG
-Extra-Tmp-Files:
+cabal-version:      >=1.10
+name:               COrdering
+version:            2.3.1
+license:            BSD3
+license-file:       LICENSE
+copyright:          (c) Adrian Hey 2004-2008
+maintainer:         Bodigrim
+author:             Adrian Hey
+tested-with:
+    ghc ==8.4.4 ghc ==8.6.5 ghc ==8.8.4 ghc ==8.10.1 ghc ==9.0.2
+    ghc ==9.2.8 ghc ==9.4.8 ghc ==9.6.7 ghc ==9.8.4 ghc ==9.10.2
+    ghc ==9.12.2 ghc ==9.14.1
 
-Library
- Buildable:          True
- Build-Depends:      base <4.11
- Exposed-Modules:    Data.COrdering
- Other-Modules:
- Extensions:         CPP
- Hs-Source-Dirs:     .
- Build-Tools:
- Ghc-Options:        -Wall
- Ghc-Prof-Options:
- Ghc-Shared-Options:
- Hugs-Options:
- Nhc98-Options:
- Includes:
- Install-Includes:
- Include-Dirs:
- C-Sources:
- Extra-Libraries:
- Extra-Lib-Dirs:
- CC-Options:
- LD-Options:
- Pkgconfig-Depends:
+synopsis:           An algebraic data type similar to Prelude Ordering.
+description:
+    Typically this is used as the return type of a combining comparison, which combines two
+    values if they are deemed equal in some sense. Currently combining comparisons are used
+    extensively by the <https://hackage.haskell.org/package/AvlTree AVL tree package>
 
+category:           Data
+build-type:         Simple
+extra-source-files:
+    AUTHORS
+    CHANGELOG.md
+
+source-repository head
+    type:     git
+    location: https://github.com/Bodigrim/COrdering.git
+
+library
+    exposed-modules:  Data.COrdering
+    default-language: Haskell2010
+    ghc-options:      -Wall
+    build-depends:    base >=4.11 && <5
